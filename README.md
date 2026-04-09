@@ -30,15 +30,15 @@ Este projeto foi desenvolvido com foco em:
 
 ##  Funcionalidades
 
-✅ Scraping de múltiplas fontes
-✅ Uso de XPath para extração de dados
-✅ Tratamento e padronização com Pandas
-✅ Armazenamento em banco de dados relacional
-✅ API REST para consumo dos dados
-✅ Dashboard para visualização
-✅ Execução automática (jobs agendados)
-✅ Sistema de logs e monitoramento
-✅ Validação para detectar falhas no scraping
+- Scraping de múltiplas fontes
+- Uso de XPath para extração de dados
+- Tratamento e padronização com Pandas
+- Armazenamento em banco de dados relacional
+- API REST para consumo dos dados
+- Dashboard para visualização
+- Execução automática (jobs agendados)
+- Sistema de logs e monitoramento
+- Validação para detectar falhas no scraping
 
 ---
 
@@ -53,17 +53,17 @@ Este projeto foi desenvolvido com foco em:
 
 ### API
 
-* FastAPI (recomendado) ou Flask
+* FastAPI
 
 ### Frontend
 
-* React (ou HTML + JavaScript)
+* React 
 
 ### Infra & Automação
 
 * Cron Jobs / Scheduler
-* Logging (logging module)
-* Docker (opcional, diferencial)
+* Logging
+* Docker 
 
 ---
 
@@ -94,7 +94,7 @@ Frontend Dashboard
 
 ---
 
-##  Estrutura do Projeto (Visão Geral)
+##  Estrutura do Projeto 
 
 ```
 datahunter/
@@ -142,8 +142,6 @@ Crie um arquivo `.env`:
 ```
 DATABASE_URL=sqlite:///data.db
 ```
-
-(ou PostgreSQL se preferir)
 
 ---
 
@@ -231,22 +229,9 @@ Exemplo:
 pytest
 ```
 
----
-
-##  Possíveis Melhorias Futuras
-
-* Dockerização do projeto
-* Deploy em cloud (AWS / Railway / Render)
-* Sistema de alertas (quando scraping falhar)
-* Cache com Redis
-* Filas com Celery / RabbitMQ
-* Autenticação na API
-
----
-
 ##  Autor
 
-Desenvolvido como projeto de portfólio para engenharia de dados.
+Mayson Lima dos Santos - Projeto desenvolvido como projeto de portfólio para engenharia de dados.
 
 ---
 
