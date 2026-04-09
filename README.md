@@ -47,9 +47,9 @@ Este projeto foi desenvolvido com foco em:
 ### Backend & Data
 
 * Python
-* BeautifulSoup / Playwright
+* BeautifulSoup 
 * Pandas
-* PostgreSQL / SQLite
+* PostgreSQL 
 
 ### API
 
@@ -61,7 +61,7 @@ Este projeto foi desenvolvido com foco em:
 
 ### Infra & Automação
 
-* Cron Jobs / Scheduler
+* Cron Jobs 
 * Logging
 * Docker 
 
@@ -72,13 +72,13 @@ Este projeto foi desenvolvido com foco em:
 O projeto segue uma arquitetura modular baseada em camadas:
 
 ```
-Data Sources (Websites)
+Data Sources 
         ↓
-Scrapers (Playwright / BeautifulSoup)
+Scrapers 
         ↓
 Data Processing (Pandas)
         ↓
-Database (PostgreSQL / SQLite)
+Database (PostgreSQL)
         ↓
 API (FastAPI)
         ↓
