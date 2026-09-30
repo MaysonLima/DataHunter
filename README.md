@@ -1,241 +1,59 @@
-#  DataHunter
+# DataHunter
 
-Sistema completo de **data scraping e engenharia de dados**, responsável por coletar, processar, armazenar e disponibilizar dados de múltiplas fontes através de uma API e um dashboard interativo.
+Projeto de portfólio em estágio inicial para estudar coleta, processamento e disponibilização de dados com Python.
 
----
+**Status:** estrutura inicial de configuração e conexão com banco. O pipeline de scraping, a API e o dashboard ainda não estão implementados neste repositório.
 
-##  Visão Geral
+## Objetivo
 
-O **DataHunter** simula um pipeline real de dados utilizado em empresas:
+Construir, de forma incremental, um fluxo que colete dados de fontes públicas, trate as informações, armazene os resultados e os disponibilize por API e interface de consulta.
 
-1. Coleta dados de diferentes sites (web scraping)
-2. Realiza limpeza e transformação dos dados
-3. Armazena em banco de dados
-4. Disponibiliza via API REST
-5. Exibe visualmente em um dashboard
-6. Executa de forma automatizada e monitorada
+## Estado atual
 
----
+| Componente | Situação |
+| --- | --- |
+| Leitura de configuração via ambiente | Implementada em `app/core/config.py` |
+| Configuração de engine, sessões e base SQLAlchemy | Implementada em `app/database/connection.py` |
+| Modelos de dados | Arquivo reservado, ainda vazio |
+| Coleta e transformação de dados | Planejadas |
+| API REST | Planejada |
+| Dashboard | Planejado |
+| Agendamento, monitoramento e testes | Planejados |
 
-##  Objetivo
+## Tecnologias
 
-Este projeto foi desenvolvido com foco em:
+**Presentes no código:** Python, SQLAlchemy e python-dotenv.
 
-* Demonstrar habilidades práticas em **engenharia de dados**
-* Trabalhar com **scraping real de múltiplas fontes**
-* Aplicar boas práticas de **arquitetura e organização de código**
-* Construir um projeto próximo de um ambiente profissional
+**Planejadas para evolução:** BeautifulSoup, Pandas, PostgreSQL, FastAPI, React e Docker. A presença nesta lista indica intenção de uso, não implementação concluída.
 
----
+## Estrutura atual
 
-##  Funcionalidades
+- `app/core/config.py`: carrega variáveis de ambiente e lê `DATABASE_URL`.
+- `app/database/connection.py`: configura engine, fábrica de sessões e base declarativa.
+- `app/database/models.py`: reservado para os modelos de dados.
 
-- Scraping de múltiplas fontes
-- Uso de XPath para extração de dados
-- Tratamento e padronização com Pandas
-- Armazenamento em banco de dados relacional
-- API REST para consumo dos dados
-- Dashboard para visualização
-- Execução automática (jobs agendados)
-- Sistema de logs e monitoramento
-- Validação para detectar falhas no scraping
-
----
-
-##  Stack Tecnológica
-
-### Backend & Data
-
-* Python
-* BeautifulSoup 
-* Pandas
-* PostgreSQL 
-
-### API
-
-* FastAPI
-
-### Frontend
-
-* React 
-
-### Infra & Automação
-
-* Cron Jobs 
-* Logging
-* Docker 
-
----
-
-##  Arquitetura
-
-O projeto segue uma arquitetura modular baseada em camadas:
-
-```
-Data Sources 
-        ↓
-Scrapers 
-        ↓
-Data Processing (Pandas)
-        ↓
-Database (PostgreSQL)
-        ↓
-API (FastAPI)
-        ↓
-Frontend Dashboard
-```
-
-### Princípios aplicados:
-
-* Separação de responsabilidades (SRP)
-* Código modular e escalável
-* Facilidade de manutenção
-* Reutilização de componentes
-
----
-
-##  Estrutura do Projeto 
-
-```
-datahunter/
-│
-├── scrapers/        # Scripts de coleta de dados
-├── processors/      # Limpeza e transformação dos dados
-├── database/        # Conexão e models do banco
-├── api/             # API REST
-├── frontend/        # Dashboard
-├── jobs/            # Automação / agendamentos
-├── logs/            # Logs do sistema
-├── tests/           # Testes
-└── main.py          # Orquestrador principal
-```
-
----
-
-##  Como Rodar o Projeto
-
-### 1. Clonar o repositório
+## Como acompanhar
 
 ```bash
-git clone https://github.com/seu-usuario/datahunter.git
-cd datahunter
+git clone https://github.com/MaysonLima/DataHunter.git
+cd DataHunter
 ```
 
-### 2. Criar ambiente virtual
+Ainda não há aplicação executável de ponta a ponta, manifesto de dependências ou comandos de inicialização da API. As instruções de instalação serão adicionadas junto com uma primeira versão executável.
 
-```bash
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-```
+## Próximas etapas
 
-### 3. Instalar dependências
+- [ ] Definir dependências e documentar a configuração do ambiente.
+- [ ] Implementar modelos e armazenamento.
+- [ ] Criar um primeiro coletor e o tratamento dos dados.
+- [ ] Disponibilizar os dados por API.
+- [ ] Construir uma interface de consulta.
+- [ ] Adicionar testes, logs e automação.
 
-```bash
-pip install -r requirements.txt
-```
+## Autor
 
-### 4. Configurar variáveis de ambiente
+[Mayson Lima dos Santos](https://maysonlima.github.io/Portfolio-Mayson-Lima-dos-Santos/)
 
-Crie um arquivo `.env`:
+## Licença
 
-```
-DATABASE_URL=sqlite:///data.db
-```
-
----
-
-### 5. Rodar o scraping
-
-```bash
-python main.py
-```
-
----
-
-### 6. Iniciar API
-
-```bash
-uvicorn api.main:app --reload
-```
-
-Acesse:
-
-```
-http://localhost:8000/docs
-```
-
----
-
-### 7. Rodar o frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
----
-
-##  Exemplos de Uso
-
-### Buscar dados via API
-
-```bash
-GET /data
-```
-
-### Filtrar dados
-
-```bash
-GET /data?source=site1
-```
-
----
-
-##  Exemplos de Dados
-
-```json
-{
-  "title": "Produto X",
-  "price": 199.90,
-  "source": "site1",
-  "collected_at": "2026-04-04T12:00:00"
-}
-```
-
----
-
-##  Automação
-
-O sistema pode ser configurado para rodar automaticamente:
-
-* Via **cron jobs**
-* Ou utilizando schedulers em Python
-
-Exemplo:
-
-```bash
-0 * * * * python main.py
-```
-
-(Roda a cada hora)
-
----
-
-##  Testes
-
-```bash
-pytest
-```
-
-##  Autor
-
-Mayson Lima dos Santos - Projeto desenvolvido como projeto de portfólio para engenharia de dados.
-
----
-
-##  Licença
-
-MIT
-
+[MIT](LICENSE).
